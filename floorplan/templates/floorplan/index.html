@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+  
+{% block title %}
+планы зданий
+{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-3 ml-4 mt-2 plans">Список планов зданий:</h1>
+<div class="row">
+{% for plan in plans %}
+  <div class="col-sm-4 mt-4 ml-2 mr-2" >
+    <div class="card">
+      <div class="card-body" style="height: 30rem;">
+        <img src="{{ plan.image.url }}" style="height: 20rem;" class="card-img-top" alt="...">
+        <h5 class="card-title m-2">{{ plan.title }}</h5>
+        <a href="{{ plan.get_absolute_url }}" class="btn btn-dark m-2">открыть</a>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
